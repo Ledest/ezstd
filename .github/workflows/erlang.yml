@@ -2,22 +2,23 @@ name: Erlang CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches:
+    - main
   pull_request:
-    branches: [ "main" ]
+    branches:
+    - main
 
 permissions:
   contents: read
 
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
-
+    strategy:
+      matrix:
+        version: [27, 26]
     container:
-      image: erlang:26
-
+      image: erlang:${{ matrix.version }}
     steps:
     - uses: actions/checkout@v4
     - name: Compile
