@@ -1,6 +1,8 @@
 %% @private
 -module(ezstd_nif).
 
+-compile([no_inline, nowarn_nif_inline]).
+
 -define(NOT_LOADED, not_loaded(?LINE)).
 
 -on_load(load_nif/0).
