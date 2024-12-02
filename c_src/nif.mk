@@ -37,18 +37,18 @@ UNAME_SYS = $(shell echo $(UNAME_SYS_ORG) | tr A-Z a-z)
 
 ifeq ($(UNAME_SYS), darwin)
     CC ?= cc
-	CFLAGS ?= -O3 -std=c99 -finline-functions -Wall
-	CXXFLAGS ?= -O3 -Wall
+	CFLAGS ?= -O2 -std=c99 -finline-functions -Wall
+	CXXFLAGS ?= -O2 -Wall
     LDFLAGS ?=
 else ifeq ($(UNAME_SYS), freebsd)
 	CC ?= cc
-	CFLAGS ?= -O3 -std=c99 -finline-functions -Wall
-	CXXFLAGS ?= -O3 -finline-functions -Wall
+	CFLAGS ?= -O2 -std=c99 -finline-functions -Wall
+	CXXFLAGS ?= -O2 -finline-functions -Wall
     LDFLAGS ?= -Wl,--exclude-libs=ALL
 else ifeq ($(UNAME_SYS), linux)
 	CC ?= gcc
-	CFLAGS ?= -O3 -std=c99 -finline-functions -Wall
-	CXXFLAGS ?= -O3 -finline-functions -Wall
+	CFLAGS ?= -O2 -std=c99 -finline-functions -Wall
+	CXXFLAGS ?= -O2 -finline-functions -Wall
     LDFLAGS ?= -Wl,--exclude-libs=ALL
 endif
 
