@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        version: [27, 26]
+        version: [29, 28, 27, 26]
     container:
       image: erlang:${{ matrix.version }}
     steps:
