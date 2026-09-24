@@ -8,6 +8,7 @@ ifeq ($(UNAME_SYS), darwin)
 				-Wl,-U,_enif_make_atom \
 				-Wl,-U,_enif_make_existing_atom \
 				-Wl,-U,_enif_make_new_binary \
+				-Wl,-U,_enif_make_sub_binary \
 				-Wl,-U,_enif_make_tuple \
 				-Wl,-U,_enif_alloc_resource \
 				-Wl,-U,_enif_make_resource \
